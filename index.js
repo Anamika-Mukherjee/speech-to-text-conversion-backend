@@ -64,7 +64,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 //declare urls to be allowed by cors
-const whitelist = [process.env.CORS_WHITELIST_URL_1, process.env.CORS_WHITELIST_URL_2];
+const whitelist = [process.env.CORS_WHITELIST_URL];
 
 // set cors options to allow only certain urls, headers and methods
 const corsOptions = {
