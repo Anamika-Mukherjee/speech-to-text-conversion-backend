@@ -36,7 +36,7 @@ const fileUpload = async (req, res, next)=>{
             if(!req.file){
               throw new AppError(400, 'File not available!');
             }        
-            console.log(req.file);
+    
             //api request to deepinfra for speech to text conversion
             const input = {
                audio: path.join(__dirname, '../', req.file.path),
