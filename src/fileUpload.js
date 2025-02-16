@@ -37,16 +37,12 @@ const fileUpload = async (req, res, next)=>{
               throw new AppError(400, 'File not available!');
             }        
             console.log(req.file);
-            console.log('before')
             //api request to deepinfra for speech to text conversion
             const input = {
                audio: path.join(__dirname, '../', req.file.path),
             }; 
-            console.log(input);
             const client = new AutomaticSpeechRecognition(MODEL, process.env.DEEPINFRA_API_KEY);
-            console.log('between');
             const transcription = await client.generate(input);
-            console.log('after')
   
             //throw error if transcription not received
             if(!transcription){
