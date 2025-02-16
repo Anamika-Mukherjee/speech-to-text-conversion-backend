@@ -78,8 +78,6 @@ const corsOptions = {
         }
     },
     allowedHeaders: 'Content-Type',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    optionsSuccessStatus: 200
 };
 
 //set up middleware for cors 
