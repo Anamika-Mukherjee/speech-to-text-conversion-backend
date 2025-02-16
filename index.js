@@ -83,7 +83,7 @@ app.use(cookieParser());
 const corsOptions = {
     credentials: true,
     origin: process.env.CORS_WHITELIST_URL,
-    allowedHeaders: 'Content-Type'
+    allowedHeaders: ['Content-Type']
 };
 
 //set up middleware for cors 
