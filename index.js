@@ -64,20 +64,26 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 //declare urls to be allowed by cors
-const whitelist = [process.env.CORS_WHITELIST_URL];
+// const whitelist = [process.env.CORS_WHITELIST_URL];
 
 // set cors options to allow only certain urls, headers and methods
+// const corsOptions = {
+//     credentials: true,
+//     origin: (origin, callback)=>{
+//         if(whitelist.indexOf(origin) !== -1 || !origin){
+//             callback(null, true);
+//         }
+//         else{
+//             callback(new Error('Not allowed by CORS!'));
+//         }
+//     },
+//     allowedHeaders: 'Content-Type',
+// };
+
 const corsOptions = {
     credentials: true,
-    origin: (origin, callback)=>{
-        if(whitelist.indexOf(origin) !== -1 || !origin){
-            callback(null, true);
-        }
-        else{
-            callback(new Error('Not allowed by CORS!'));
-        }
-    },
-    allowedHeaders: 'Content-Type',
+    origin: process.env.CORS_WHITELIST_URL,
+    allowedHeaders: 'Content-Type'
 };
 
 //set up middleware for cors 
