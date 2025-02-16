@@ -11,10 +11,10 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY
 
 //set cookie options
 const cookieOptions = {
-  // secure: true,
+  secure: true,
   httpOnly: true,
   maxAge: 1000 * 60 * 60 * 24 * 7,
-  // sameSite: 'None' 
+  sameSite: 'None' 
 };
 
 //function to handle sign in requests
